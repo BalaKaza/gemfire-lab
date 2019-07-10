@@ -11,6 +11,7 @@ public class BookMaster implements Serializable
 	private float retailCost;
 	private int yearPublished;
 	private String author;
+
 	private String title;
 	
 	public BookMaster(int itemNumber, String description, float retailCost,

@@ -11,10 +11,11 @@ public class BookMasterCacheLoader implements CacheLoader<Integer, BookMaster> {
 
 	public BookMaster load(LoaderHelper<Integer, BookMaster> helper) {
 		JdbcBookDAO dao = new JdbcBookDAO();
-		
+		BookMaster book = dao.getBook(helper.getKey());
+
 
 		// TODO-01: Implement the necessary logic to get the key and use the JdbcBookDAO to fetch the book using that key
-		return null;
+		return book;
 	}
 
 	public void close() {
