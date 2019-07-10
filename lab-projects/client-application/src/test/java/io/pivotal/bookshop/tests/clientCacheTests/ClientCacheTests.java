@@ -21,7 +21,7 @@ public class ClientCacheTests {
 	private ClientCache clientCache;
 
 	@Before
-	public void setUp() throws Exception {		
+	public void setUp() {
 		this.clientCache =  GemFireClientCacheHelper.create();
 		books = clientCache.getRegion("BookMaster");
 		customers = clientCache.getRegion("Customer");

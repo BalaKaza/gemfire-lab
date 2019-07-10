@@ -13,28 +13,4 @@ public class CustomerDAO extends DAOCommon<Integer,Customer> {
 		super(clientCache);
 		this.customers = clientCache.getRegion("Customer");
 	}
-
-	@Override
-	public void doInsert(Integer key, Customer entry) {
-		
-	}
-
-	@Override
-	public Customer doGet(Integer key) {
-		return null;
-	}
-
-	@Override
-	public void doUpdate(Integer key, Customer entry) {
-		
-	}
-
-	@Override
-	public void doDelete(Integer key) {
-
-	}
-
-	
-
-
 }
