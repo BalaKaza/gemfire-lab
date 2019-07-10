@@ -7,10 +7,8 @@ import io.pivotal.bookshop.domain.Customer;
 
 // TODO-11: Implement the appropriate methods of the CustomerDAO class as you did with BookMasterDAO
 public class CustomerDAO extends DAOCommon<Integer,Customer> {
-	private Region<Integer, Customer> customers;
 
 	public CustomerDAO(ClientCache clientCache) {
-		super(clientCache);
-		this.customers = clientCache.getRegion("Customer");
+		super(clientCache,"Customers");
 	}
 }

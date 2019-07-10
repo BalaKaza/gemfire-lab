@@ -7,8 +7,9 @@ public abstract class DAOCommon<K, T> {
     private Region<K, T> regions;
 
 
-    public DAOCommon(ClientCache clientCache) {
+    public DAOCommon(ClientCache clientCache,String regionName) {
         this.clientCache = clientCache;
+        this.regions= clientCache.getRegion(regionName);
     }
 
     public void doInsert(K key, T entry) {

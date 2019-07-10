@@ -95,7 +95,7 @@ public class CustomerDAOTests {
 	 * Verify entry with given key matches the book object passed in
 	 * 
 	 * @param key Key to validate entry for
-	 * @param book Book expected to match entry with given key
+	 * @param cust Book expected to match entry with given key
 	 */
 	private void verify(Integer key, Customer cust) {
 		Customer storedCustomer = customers.get(key);
