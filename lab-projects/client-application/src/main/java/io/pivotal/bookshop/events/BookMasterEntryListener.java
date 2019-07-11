@@ -1,13 +1,23 @@
 package io.pivotal.bookshop.events;
 
+import org.apache.geode.cache.CacheListener;
 import org.apache.geode.cache.EntryEvent;
+import org.apache.geode.cache.InterestResultPolicy;
 import org.apache.geode.cache.util.CacheListenerAdapter;
 
 import io.pivotal.bookshop.domain.BookMaster;
 
 // TODO-01: Implement the listener to extend the adapter but only implement for the create and destroy events
-public class BookMasterEntryListener  {
+public class BookMasterEntryListener extends CacheListenerAdapter {
 
-	// TODO-02: Implement necessary code to register and unregister interest on create and destroy events
+    // TODO-02: Implement necessary code to register and unregister interest on create and destroy events
+    @Override
+    public void afterCreate(EntryEvent event) {
+        event.getRegion().registerInterest(event.getKey());
+    }
 
+    @Override
+    public void afterDestroy(EntryEvent event) {
+        event.getRegion().unregisterInterest(event.getKey());
+    }
 }

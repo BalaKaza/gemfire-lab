@@ -22,6 +22,7 @@ public class GemFireClientCacheHelper {
 		ClientCache cache = new ClientCacheFactory()
 				.set("name", "Client App")
 				.addPoolLocator("localhost", 10334)
+				.setPoolSubscriptionEnabled(true)
 				.create();
 
 		createBookMasterClientRegion(cache);
