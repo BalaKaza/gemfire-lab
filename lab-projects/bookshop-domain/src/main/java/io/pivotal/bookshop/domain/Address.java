@@ -12,6 +12,7 @@ public class Address
 	private String country;
 	private String phoneNumber;
 	private String addressTag;
+
 		
 	public Address() {}
 	public Address(String postalCode)
